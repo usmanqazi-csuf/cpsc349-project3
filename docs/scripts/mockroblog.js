@@ -206,7 +206,7 @@ export function getHomeTimeline (username) {
   }
 }
 
-export function postTweet (userId, text) {
+export function postMessage (userId, text) {
   if (userId > 3) {
     const now = new Date()
     const timestamp =
