@@ -13,3 +13,12 @@ for (let i = 0; i < timeline.length; i++) {
     
     document.getElementById("timeline").append(timelinePost)
 }
+
+// New post dropdown menu
+
+const newPostBtn = document.querySelector("button.new-post-button")
+const newPostArea = document.querySelector(".new-post-area")
+
+newPostBtn.addEventListener("click", () => {
+    newPostArea.classList.toggle("hidden")
+})
