@@ -1,0 +1,38 @@
+<head>
+    <title>Stoopneggle</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/tailwind.css">
+    <script type="module" src="scripts/initFollowers.js"></script>
+</head>
+<nav class="relative w-full flex items-center justify-between flex-wrap bg-pink-300">
+    <h2 class="text-4xl flex-1 text-center text-white">Stoopneggle</h2>
+    <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500 text-2xl">
+        <li class="p-8"><a href="home_timeline.html" class="{% if page.url == '/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Home</a></li>
+        <li class="p-8"><a href="index.html" class="{% if page.url == '/dog/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Login</a></li>
+        <li class="p-8"><a href="user_timeline.html" class="{% if page.url == '/about/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Users</a></li>
+        <li class="p-8"><a href="registration.html" class="{% if page.url == '/about/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Register</a></li>
+        <li class="p-8"><a href="public_timeline.html" class="{% if page.url == '/about/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Public</a></li>
+        <li class="p-8"><a href="followers.html" class="{% if page.url == '/cat/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">Followers</a></li>
+        <li class="p-8"><a href="about.html" class="{% if page.url == '/about/' %}
+            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+            text-white hover:text-blue-900 mr-auto">About</a></li>
+    </ul>
+</nav>
+<div>
+    Heer r ur stoopneggle followers...
+</div>
+<pre id="followers-json">
+</pre>

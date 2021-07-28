@@ -15,6 +15,10 @@ else if (document.querySelector('#public_tl') === document.querySelector('.activ
 {
     timeline = mockroblog.getPublicTimeline() //Change to get public timeline
 }
+else if (document.querySelector('#following_tl') === document.querySelector('.active'))
+{
+    timeline = mockroblog.getUserTimeline('ProfAvery') //Change to getFollowers (will need to implement this in extraData.js)
+}
 
 for (let i = 0; i < timeline.length; i++) {
     let timelinePost = document.createElement('div')

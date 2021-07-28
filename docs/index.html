@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Mockroblog</title>
+        <title>Stoopneggle</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
     </head>
     <body class = "grid grid-cols-4 grid-rows-4 gap-5 bg-indigo-900 text-white">
-        <header class = "col-start-2 col-end-4 text-center p-10">
-            <h1>Mockroblog</h1>
-        </header>
+        <!--header class = "col-start-2 col-end-4 text-center p-10">
+            <h1>Stoopneggle</h1>
+        </header-->
 
-        <nav class = "flex flex-col col-start-1 row-start-2 text-center">
+        <!--nav class = "flex flex-col col-start-1 row-start-2 text-center">
             <ul class= "nav_list">
                 <li><a href="/">Login</a></li>
                 <li><a href="/about/">About Us</a></li>
             </ul>
+        </nav-->
+        <nav class="relative w-full flex items-center justify-between flex-wrap bg-pink-300">
+            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500 text-2xl">
+                <h2 class="text-4xl flex-1 text-center text-white">Stoopneggle</h2>
+                <li class="p-8"><a href="home_timeline.html" class="{% if page.url == '/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">Home</a></li>
+                <li class="p-8"><a href="index.html" class="{% if page.url == '/dog/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto active text-purple-700">Login</a></li>
+                <li class="p-8"><a href="user_timeline.html" class="{% if page.url == '/about/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">Users</a></li>
+                <li class="p-8"><a href="registration.html" class="{% if page.url == '/about/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">Register</a></li>
+                <li class="p-8"><a href="public_timeline.html" class="{% if page.url == '/about/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">Public</a></li>
+                <li class="p-8"><a href="followers.html" class="{% if page.url == '/cat/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">Following</a></li>
+                <li class="p-8"><a href="about.html" class="{% if page.url == '/about/' %}
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
+                    text-white hover:text-blue-900 mr-auto">About</a></li>
+            </ul>
         </nav>
-
         <div class = "flex flex-col col-start-2 col-end-4 row-start-2 row-end-3 text-center">
             <form id = "login" class = "text-center">
                 <label for = "username">Username/Email: </label>
@@ -38,7 +63,8 @@
         </div>
 
         <footer class = "col-span-4 p-10 text-center">
-            <h2>Copyright @ 2021 CSUF Team 7</h2>
+            <h2>Copyright @ 2021 CSUF Team 7</h2><br><br>
         </footer>
+        <a href="about.html" class="right-0"><img src="./images/logo.png" alt="The Beloved One"></a>
     </body>
 </html>
