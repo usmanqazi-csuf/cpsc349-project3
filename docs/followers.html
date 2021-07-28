@@ -13,6 +13,7 @@
             <h2 class="bg-pink-300 text-4xl flex-1 text-center text-white">Stoopneggle</h2>
         </header>
 
+        <!-- Navbar -->
         <div class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1">
             <div class="col-start-2">
                 <div class="fixed h-full w-44 flex flex-col text-center justify-center">
@@ -25,6 +26,25 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Navbar -->
+        <div class="lg:hidden col-start-2 col-end-4 text-center justify-center items-center">
+            <button class="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 20 20" fill="currentColor">
+                    <path id="mobile-menu-button-icon-menu" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 
+                    2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div class="hidden mobile-menu bg-indigo-800">
+                <span class="block p-5">Logged in as {username}</span> 
+                <a class="block hover:bg-purple-700 p-5" id="home_tl" href="/home_timeline.html">Home</a> 
+                <a class="block hover:bg-purple-700 p-5" id="user_tl" href="/user_timeline.html">User</a> 
+                <a class="block hover:bg-purple-700 p-5" id="public_tl" href="/public_timeline.html">Public</a>
+                <a class="block hover:bg-purple-700 p-5 bg-purple-800 active" id="following_tl" href="/followers.html">Following</a>  
+                <a class="block hover:bg-purple-700 p-5"href="/">Logout</a>
+            </div>
+        </div>
+
         <div id="timeline" class="col-start-2 col-end-4">
             <div class="hidden new-post-area p-5 m-5 rounded-lg bg-blue-800">
                 <textarea class="w-full h-full resize-none outline-none bg-blue-800" name="newPost" rows="3" placeholder="Type whatever"></textarea>
