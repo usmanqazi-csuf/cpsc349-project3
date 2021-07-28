@@ -8,18 +8,24 @@
         <script type="module" src="scripts/userTimeline.js"></script>
     </head>
     <body class="grid grid-cols-4 gap-5 bg-indigo-900 text-white">
-        <header class="col-span-4 text-center p-10">
+        <header class="col-start-2 col-end-4 text-center p-10">
             <p>HEADER</p>
         </header>
-        <div class="flex flex-col text-center">
-            <span class="p-5">Logged in as</span> 
-            <a class="hover:bg-purple-700 p-5" href="/home_timeline.html">Home Timeline</a> 
-            <a class="hover:bg-purple-700 p-5 bg-purple-800" href="/user_timeline.html">User Timeline</a> 
-            <a class="hover:bg-purple-700 p-5" href="/public_timeline.html">Public Timeline</a> 
-            <a class="hover:bg-purple-700 p-5"href="/following.html">Following</a>
-            <a class="hover:bg-purple-700 p-5"href="/">Logout</a>
+
+        <div class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1">
+            <div class="col-start-2">
+                <div class="fixed h-full w-44 flex flex-col text-center justify-center">
+                    <span class="p-4">Logged in as {username}</span> 
+                    <a class="hover:bg-purple-700 p-5" id="home_tl" href="/home_timeline.html">Home Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5 bg-purple-800 active" id="user_tl" href="/user_timeline.html">User Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5" id="public_tl" href="/public_timeline.html">Public Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5"href="/following.html">Following</a>
+                    <a class="hover:bg-purple-700 p-5"href="/">Logout</a>
+                </div>
+            </div>
         </div>
-        <div id="user-timeline" class="col-span-2">
+
+        <div id="user-timeline" class="col-start-2 col-end-4">
             <div class="text-center">
                 <button class="new-post-button hover:text-purple-300 transition duration-300">
                     New Post &#9660;
@@ -33,6 +39,7 @@
                 </button>
             </div>
         </div>
+
         <footer class="col-span-4 p-10 text-center">
             <p>FOOTER</p>
         </footer>
