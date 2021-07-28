@@ -9,9 +9,9 @@
     "browsersync": "npx browser-sync start --server docs/ --files \"docs/**/*\""
   },
   "standard": {
-      "ignore": [
-          "tailwind.config.js"
-      ]
+    "ignore": [
+      "tailwind.config.js"
+    ]
   },
   "author": "Kenytt Avery",
   "repository": {
