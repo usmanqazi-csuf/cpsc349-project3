@@ -7,9 +7,38 @@
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
     </head>
-    <body>
-        <h1>Mockroblog</h1>
-        <pre id="timeline-json">
-        </pre>
+    <body class = "grid grid-cols-4 grid-rows-4 gap-5 bg-indigo-900 text-white">
+        <header class = "col-start-2 col-end-4 text-center p-10">
+            <h1>Mockroblog</h1>
+        </header>
+
+        <nav class = "flex flex-col col-start-1 row-start-2 text-center">
+            <ul class= "nav_list">
+                <li><a href="/">Login</a></li>
+                <li><a href="/about/">About Us</a></li>
+            </ul>
+        </nav>
+
+        <div class = "flex flex-col col-start-2 col-end-4 row-start-2 row-end-3 text-center">
+            <form id = "login" class = "text-center">
+                <label for = "username">Username/Email: </label>
+                <input type = "text" id = "username" name = "username"><br><br>
+                <label for = "password">Password: </label>
+                <input type = "text" id = "password" name = "password"><br><br>
+                <input type = "submit" value = "login">
+            </form>
+        </div>
+
+        <div class = "flex flex-col col-start-2 col-end-4 row-start-3 row-end-4 text-center bg-red-900">
+            <div id = "linktoregister" class = "text-bottom">
+                <button id = "registerbutton" onclick = "document.location='registration.html'">
+                    Don't have an account? Click here to register.
+                </button>
+            </div>
+        </div>
+
+        <footer class = "col-span-4 p-10 text-center">
+            <h2>Copyright @ 2021 CSUF Team 7</h2>
+        </footer>
     </body>
 </html>
