@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
+        <!--script type="module" src="scripts/initFollowers.js"></script-->
     </head>
     <body class="grid grid-cols-4 gap-5 bg-indigo-900 text-white">
         <header class="col-start-2 col-end-4 text-center p-10">
@@ -16,21 +17,15 @@
             <div class="col-start-2">
                 <div class="fixed h-full w-44 flex flex-col text-center justify-center">
                     <span class="p-4">Logged in as {username}</span> 
-                    <a class="hover:bg-purple-700 p-5 bg-purple-800 active" id="home_tl" href="/home_timeline.html">Home</a> 
+                    <a class="hover:bg-purple-700 p-5" id="home_tl" href="/home_timeline.html">Home</a> 
                     <a class="hover:bg-purple-700 p-5" id="user_tl" href="/user_timeline.html">User</a> 
                     <a class="hover:bg-purple-700 p-5" id="public_tl" href="/public_timeline.html">Public</a>
-                    <a class="hover:bg-purple-700 p-5" id="following_tl" href="/followers.html">Following</a>  
+                    <a class="hover:bg-purple-700 p-5 bg-purple-800 active" id="following_tl" href="/followers.html">Following</a>  
                     <a class="hover:bg-purple-700 p-5"href="/">Logout</a>
                 </div>
             </div>
         </div>
-
         <div id="timeline" class="col-start-2 col-end-4">
-            <div class="text-center">
-                <button class="new-post-button hover:text-purple-300 transition duration-300">
-                    New Post &#9660;
-                </button>
-            </div>
             <div class="hidden new-post-area p-5 m-5 rounded-lg bg-blue-800">
                 <textarea class="w-full h-full resize-none outline-none bg-blue-800" name="newPost" rows="3" placeholder="Type whatever"></textarea>
                 <br>
@@ -39,9 +34,8 @@
                 </button>
             </div>
         </div>
-
-        <footer class="col-span-4 p-10 text-center">
-            <p>JUST A FOOTER. NOTHING SPECIAL.</p>
+        <footer class="col-span-4 p-10 bottom-0 text-center"><p>FUN FACT: RIDING ROLLERCOASTERS MAY HELP YOU PASS KIDNEY STONES</p>
         </footer>
+        <a href="about.html" class="right-0"><img src="./images/logo.png" alt="The Beloved One"></a>
     </body>
 </html>
