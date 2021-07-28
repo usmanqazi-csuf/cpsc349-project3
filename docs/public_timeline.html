@@ -8,9 +8,10 @@
         <script type="module" src="scripts/init.js"></script>
     </head>
     <body class="grid grid-cols-4 gap-5 bg-indigo-900 text-white">
-        <header class="col-span-4 text-center p-10">
+        <header class="col-start-2 col-end-4 text-center p-10">
             <p>HEADER</p>
         </header>
+
         <div class="flex flex-col text-center">
             <span class="p-5">Logged in as</span> 
             <a class="hover:bg-purple-700 p-5" href="/home_timeline.html">Home Timeline</a> 
@@ -18,22 +19,36 @@
             <a class="hover:bg-purple-700 p-5 bg-purple-800" href="/public_timeline.html">Public Timeline</a> 
             <a class="hover:bg-purple-700 p-5"href="/following.html">Following</a>
             <a class="hover:bg-purple-700 p-5"href="/">Logout</a>
+
+        <div class="col-start-1 row-start-1 grid grid-cols-4 gap-1">
+            <div class="col-start-2">
+                <div class="fixed h-full w-44 flex flex-col text-center justify-center">
+                    <span class="p-5">Logged in as</span> 
+                    <a class="hover:bg-purple-700 p-5" href="/home_timeline.html">Home Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5" href="/user_timeline.html">User Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5 bg-purple-800"href="/public_timeline.html">Public Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5"href="/following.html">Following</a>
+                    <a class="hover:bg-purple-700 p-5"href="/">Logout</a>
+                </div>
+            </div>
         </div>
-        <div id="timeline" class="col-span-2">
+            
+        <div id="timeline" class="col-start-2 col-end-4">
             <div class="text-center">
                 <button class="new-post-button hover:text-purple-300 transition duration-300">
                     New Post &#9660;
                 </button>
             </div>
-            <div class="hidden new-post-area p-5 m-5 rounded-lg bg-blue-800">
-                <textarea class="w-full h-full resize-none outline-none bg-blue-800" name="newPost" rows="3" placeholder="Type whatever"></textarea>
+            <div class="hidden new-post-area p-5 m-5 rounded-lg bg-blue-700">
+                <textarea class="w-full h-full resize-none outline-none bg-blue-700" name="newPost" rows="3" placeholder="Type whatever"></textarea>
                 <br>
                 <button class="p-2 rounded-lg bg-indigo-900" onclick="postMessage(-1)">
                     Post
                 </button>
             </div>
         </div>
-        <footer class="col-span-4 p-10 text-center">
+
+        <footer class="col-start-2 col-end-4 p-10 text-center">
             <p>FOOTER</p>
         </footer>
     </body>
