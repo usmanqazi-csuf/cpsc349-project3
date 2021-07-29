@@ -7,20 +7,13 @@
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
     </head>
-    <body class="grid grid-cols-4 gap-0 bg-indigo-900 text-white">
+    <body class="bg-indigo-900 text-white">
         <!-- Navbar -->
-        <nav class="col-span-4 row-start-1 row-end-2 flex items-center justify-between bg-indigo-800">
-            <h2 class="text-4xl text-center text-white mx-16 p-8">Stoopneggle</h2>
-            <div class="flex space-x-4 text-2xl mx-16 p-8">
-                <a href="home_timeline.html" class="text-white hover:text-blue-500">Home</a>
-                <a href="user_timeline.html" class="text-white hover:text-blue-500">Users</a>
-                <a href="public_timeline.html" class="text-white hover:text-blue-500">Public</a>
-                <a href="followers.html" class="text-white hover:text-blue-500">Following</a>
-                <a href="about.html" class="text-white hover:text-blue-500">About</a>
-            </div>
-        </nav>
+        <header class="flex my-16 text-center justify-center">
+            <h2 class="text-4xl text-center text-white">Stoopneggle</h2>
+        </header>
 
-        <div class = "flex flex-col col-start-2 col-end-4 row-start-3 my-16">
+        <div class = "flex flex-col my-16">
             <form id="login" class="text-center">
                 <label for="username">Username/Email: </label>
                 <input class="text-black p-1 outline-none rounded-sm focus:bg-indigo-100"
@@ -32,15 +25,15 @@
             </form>
         </div>
 
-        <div class = "flex flex-col col-start-2 col-end-4 row-start-4 text-center items-center justify-center">
+        <div class = "flex flex-col text-center items-center justify-center">
             <div class="bg-red-900 p-4">
                 <a class="hover:text-indigo-200" href="registration.html">Don't have an account? Click here to register.</a>
             </div>
         </div>
 
-        <footer class="col-span-4 row-start-5 p-10 text-center">
+        <footer class="p-10 text-center">
             <h2>Copyright @ 2021 CSUF Team 7</h2><br><br>
         </footer>
-        <a href="about.html" class="col-start-1 row-start-6"><img src="./images/logo.png" alt="The Beloved One"></a>
+        <a href="about.html" class=""><img src="./images/logo.png" alt="The Beloved One"></a>
     </body>
 </html>
