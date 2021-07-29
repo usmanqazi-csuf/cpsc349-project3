@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-full" lang="en">
     <head>
         <title>Stoopneggle</title>
         <meta charset="UTF-8" />
@@ -7,21 +7,23 @@
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
     </head>
-    <body class="bg-indigo-900 text-white">
+    <body class="flex h-full flex-col bg-indigo-900 text-white justify-center items-center">
         <!-- Navbar -->
         <header class="flex my-16 text-center justify-center">
             <h2 class="text-4xl text-center text-white">Stoopneggle</h2>
         </header>
 
-        <div class = "flex flex-col my-16">
-            <form id="login" class="text-center">
-                <label for="username">Username/Email: </label>
-                <input class="text-black p-1 outline-none rounded-sm focus:bg-indigo-100"
-                autocomplete="off" type="text" id="username" name="username"><br><br>
-                <label for="password">Password: </label>
-                <input class="text-black p-1 outline-none rounded-sm focus:bg-indigo-100"
-                autocomplete="off" type="text" id="password" name="password"><br><br>
-                <button class="bg-blue-700 p-2 rounded-lg hover:bg-blue-800">Login</button>
+        <div class = "flex justify-center my-16">
+            <form id="login" class="grid grid-rows-3 text-right">
+                <label class="row-start-1 my-2" for="username">Username/Email: </label>
+                <label class="row-start-2 my-2" for="password">Password: </label>
+                <input class="row-start-1 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                autocomplete="off" type="text" id="username" name="username">
+                <input class="row-start-2 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                autocomplete="off" type="text" id="password" name="password">
+                <div class="flex justify-center col-span-2 my-2">
+                    <button class="row-start-3 bg-blue-700 px-2 rounded-lg hover:bg-blue-800">Login</button>
+                </div>
             </form>
         </div>
 
@@ -34,6 +36,6 @@
         <footer class="p-10 text-center">
             <h2>Copyright @ 2021 CSUF Team 7</h2><br><br>
         </footer>
-        <a href="about.html" class=""><img src="./images/logo.png" alt="The Beloved One"></a>
+        <!-- <a href="about.html" class=""><img src="./images/logo.png" alt="The Beloved One"></a> -->
     </body>
 </html>
