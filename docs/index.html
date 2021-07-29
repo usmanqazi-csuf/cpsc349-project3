@@ -7,64 +7,40 @@
         <link rel="stylesheet" href="styles/tailwind.css">
         <script type="module" src="scripts/init.js"></script>
     </head>
-    <body class = "grid grid-cols-4 grid-rows-4 gap-5 bg-indigo-900 text-white">
-        <!--header class = "col-start-2 col-end-4 text-center p-10">
-            <h1>Stoopneggle</h1>
-        </header-->
-
-        <!--nav class = "flex flex-col col-start-1 row-start-2 text-center">
-            <ul class= "nav_list">
-                <li><a href="/">Login</a></li>
-                <li><a href="/about/">About Us</a></li>
-            </ul>
-        </nav-->
-        <nav class="relative w-full flex items-center justify-between flex-wrap bg-pink-300">
-            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500 text-2xl">
-                <h2 class="text-4xl flex-1 text-center text-white">Stoopneggle</h2>
-                <li class="p-8"><a href="home_timeline.html" class="{% if page.url == '/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">Home</a></li>
-                <li class="p-8"><a href="index.html" class="{% if page.url == '/dog/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto active text-purple-700">Login</a></li>
-                <li class="p-8"><a href="user_timeline.html" class="{% if page.url == '/about/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">Users</a></li>
-                <li class="p-8"><a href="registration.html" class="{% if page.url == '/about/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">Register</a></li>
-                <li class="p-8"><a href="public_timeline.html" class="{% if page.url == '/about/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">Public</a></li>
-                <li class="p-8"><a href="followers.html" class="{% if page.url == '/cat/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">Following</a></li>
-                <li class="p-8"><a href="about.html" class="{% if page.url == '/about/' %}
-                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-                    text-white hover:text-blue-900 mr-auto">About</a></li>
-            </ul>
+    <body class="grid grid-cols-4 gap-0 bg-indigo-900 text-white">
+        <!-- Navbar -->
+        <nav class="col-span-4 row-start-1 row-end-2 flex items-center justify-between bg-pink-300">
+            <h2 class="text-4xl text-center text-white mx-16 p-8">Stoopneggle</h2>
+            <div class="flex space-x-4 text-2xl mx-16 p-8">
+                <a href="home_timeline.html" class="text-white hover:text-blue-900">Home</a>
+                <a href="user_timeline.html" class="text-white hover:text-blue-900">Users</a>
+                <a href="public_timeline.html" class="text-white hover:text-blue-900">Public</a>
+                <a href="followers.html" class="text-white hover:text-blue-900">Following</a>
+                <a href="about.html" class="text-white hover:text-blue-900">About</a>
+            </div>
         </nav>
-        <div class = "flex flex-col col-start-2 col-end-4 row-start-2 row-end-3 text-center">
-            <form id = "login" class = "text-center">
-                <label for = "username">Username/Email: </label>
-                <input type = "text" id = "username" name = "username"><br><br>
-                <label for = "password">Password: </label>
-                <input type = "text" id = "password" name = "password"><br><br>
-                <input type = "submit" value = "login">
+
+        <div class = "flex flex-col col-start-2 col-end-4 row-start-3 my-16">
+            <form id="login" class="text-center">
+                <label for="username">Username/Email: </label>
+                <input class="text-black p-1 outline-none rounded-sm focus:bg-indigo-100"
+                autocomplete="off" type="text" id="username" name="username"><br><br>
+                <label for="password">Password: </label>
+                <input class="text-black p-1 outline-none rounded-sm focus:bg-indigo-100"
+                autocomplete="off" type="text" id="password" name="password"><br><br>
+                <button class="bg-blue-700 p-2 rounded-lg hover:bg-blue-800">Login</button>
             </form>
         </div>
 
-        <div class = "flex flex-col col-start-2 col-end-4 row-start-3 row-end-4 text-center bg-red-900">
-            <div id = "linktoregister" class = "text-bottom">
-                <button id = "registerbutton" onclick = "document.location='registration.html'">
-                    Don't have an account? Click here to register.
-                </button>
+        <div class = "flex flex-col col-start-2 col-end-4 row-start-4 text-center items-center justify-center">
+            <div class="bg-red-900 p-4">
+                <a class="hover:text-indigo-200" href="registration.html">Don't have an account? Click here to register.</a>
             </div>
         </div>
 
-        <footer class = "col-span-4 p-10 text-center">
+        <footer class="col-span-4 row-start-5 p-10 text-center">
             <h2>Copyright @ 2021 CSUF Team 7</h2><br><br>
         </footer>
-        <a href="about.html" class="right-0"><img src="./images/logo.png" alt="The Beloved One"></a>
+        <a href="about.html" class="col-start-1 row-start-6"><img src="./images/logo.png" alt="The Beloved One"></a>
     </body>
 </html>
