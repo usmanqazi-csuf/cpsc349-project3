@@ -4,13 +4,15 @@ import * as mockroblog2 from './extraData.js'
 window.mockroblog = mockroblog
 
 let timeline = null
+let username = window.sessionStorage.getItem('username')
+
 if (document.querySelector("#home_tl") === document.querySelector('.active'))
 {
-    timeline = mockroblog.getHomeTimeline('ProfAvery') //Change to get home timeline
+    timeline = mockroblog.getHomeTimeline(username) //Change to get home timeline
 }
 else if (document.querySelector("#user_tl") === document.querySelector('.active'))
 {
-    timeline = mockroblog.getUserTimeline('ProfAvery') //Change to get user timeline
+    timeline = mockroblog.getUserTimeline(username) //Change to get user timeline
 }
 else if (document.querySelector('#public_tl') === document.querySelector('.active'))
 {
@@ -18,8 +20,13 @@ else if (document.querySelector('#public_tl') === document.querySelector('.activ
 }
 else if (document.querySelector('#following_tl') === document.querySelector('.active'))
 {
-    timeline = mockroblog.getUserTimeline('ProfAvery') //Change to getFollowers (will need to implement this in extraData.js)
+    timeline = mockroblog.getUserTimeline(username) //Change to getFollowers (will need to implement this in extraData.js)
 }
+
+// Logged in as {username} on navbar
+
+let loginStatus = document.getElementById('login-status')
+loginStatus.innerHTML = "Logged in as @" + username
 
 //Generate div for each blog post
 
