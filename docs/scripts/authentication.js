@@ -10,7 +10,7 @@ function login() {
         //Store login info
         loginSession.setItem('uid', userInfo.id); 
         loginSession.setItem('username', userInfo.username);
-        window.location.href = "public_timeline.html"
+        window.location.href = "home_timeline.html"
     }
 }
 

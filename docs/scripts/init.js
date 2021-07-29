@@ -3,26 +3,26 @@ import * as mockroblog2 from './extraData.js'
 
 window.mockroblog = mockroblog
 
-//Determine what type of content to display
+// Determine what type of content to display
 
 let timeline = null
 let username = window.sessionStorage.getItem('username')
 
 if (document.querySelector("#home_tl") === document.querySelector('.active'))
 {
-    timeline = mockroblog.getHomeTimeline(username) //Change to get home timeline
+    timeline = mockroblog.getHomeTimeline(username)
 }
 else if (document.querySelector("#user_tl") === document.querySelector('.active'))
 {
-    timeline = mockroblog.getUserTimeline(username) //Change to get user timeline
+    timeline = mockroblog.getUserTimeline(username)
 }
 else if (document.querySelector('#public_tl') === document.querySelector('.active'))
 {
-    timeline = mockroblog.getPublicTimeline() //Change to get public timeline
+    timeline = mockroblog.getPublicTimeline()
 }
 else if (document.querySelector('#following_tl') === document.querySelector('.active'))
 {
-    timeline = mockroblog.getUserTimeline(username) //Change to getFollowers (will need to implement this in extraData.js)
+    timeline = mockroblog.getPublicTimeline() //Change to getFollowers (will need to implement this in extraData.js)
 }
 
 // Logged in as {username} on navbar
@@ -30,11 +30,11 @@ else if (document.querySelector('#following_tl') === document.querySelector('.ac
 let loginStatus = document.getElementById('login-status')
 loginStatus.innerHTML = "Logged in as @" + username
 
-//Generate div for each blog post
+// Generate div for each blog post
 
 for (let i = 0; i < timeline.length; i++) {
     let timelinePost = document.createElement('div')
-    timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+    timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700 break-words'
 
     timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
     timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + "</span>" + "<br>"  + "<hr>"
@@ -42,10 +42,6 @@ for (let i = 0; i < timeline.length; i++) {
     
     document.getElementById("timeline").append(timelinePost)
 }
-
-//Display username in side bar
-
-document.getElementById("username_text").innerText += window.sessionStorage.getItem('username')
 
 // Mobile dropdown navbar
 
@@ -79,12 +75,23 @@ newPostBtn.addEventListener("click", () => {
     newPostArea.classList.toggle("hidden")
 })
 
-//Post button functionality
-document.getElementById('')
+// Post button functionality
+
 function publishPost() {
-    var postButton = document.getElementById('post-button');
-    var newPostText = document.getElementById('new-post');
-    postButton.onclick = function(){postMessage(window.sessionStorage.getItem('username', newPostText))};
+    let newPostText = document.getElementById('new-post-text').value;
+    if(newPostText){
+        let postData = mockroblog.postMessage(window.sessionStorage.getItem('uid'), newPostText);
+        document.getElementById('new-post-text').value = '';
+
+        //Generate and display new div
+        let newPostDiv = document.createElement('div')
+        newPostDiv.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+
+        newPostDiv.innerHTML += mockroblog2.getUsername(parseInt(postData.user_id))
+        newPostDiv.innerHTML += "<span class = 'float-right'>" + postData.timestamp + "</span>" + "<br>"  + "<hr>"
+        newPostDiv.innerHTML += postData.text
+
+        document.querySelector(".new-post-area").after(newPostDiv)
+    }
 }
-
-
+document.getElementById('post-button').onclick = function() { publishPost() };
