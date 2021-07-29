@@ -8,14 +8,15 @@
         <script type="module" src="scripts/init.js"></script>
     </head>
     <body class="grid grid-cols-4 gap-5 bg-indigo-900 text-white">
+        <!-- Header -->
         <header class="flex col-start-2 col-end-4 text-center items-center justify-center my-16">
             <h2 class="text-center text-5xl text-white">Stoopneggle</h2>
         </header>
 
         <!-- Navbar -->
-        <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1">
+        <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1 lg:row-span-3">
             <div class="col-start-2">
-                <div class="fixed h-full w-44 flex flex-col text-center justify-center">
+                <div class="fixed h-full w-44 flex flex-col text-center justify-center bg-opacity-50 bg-gray-500">
                     <span id="login-status" class="p-4">Logged in as @{username}</span> 
                     <hr>
                     <a class="hover:bg-purple-700 p-5 bg-purple-800 active" id="home_tl" href="home_timeline.html">Home Timeline</a> 
@@ -62,8 +63,20 @@
             </div>
         </div>
 
-        <footer class="col-span-4 p-10 text-center">
-            <p>JUST A FOOTER. NOTHING SPECIAL.</p>
+        <!-- Footer -->
+        <footer class="col-span-2 p-10 text-center">
+            <hr class="h-px bg-gray-800 border-none w-auto m-center">
+            <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+                <div>
+                    <a href="#" class="text-xl font-bold">Brand</a>
+                </div>
+                <div class="flex mt-4 md:m-0">
+                    <div class="-mx-4">
+                      <a href="#" class="px-4 text-sm">About</a>
+                      <a href="#" class="px-4 text-sm">Contact</a>
+                  	</div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>
