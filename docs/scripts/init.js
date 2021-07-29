@@ -4,7 +4,6 @@ import * as mockroblog2 from './extraData.js'
 window.mockroblog = mockroblog
 
 let timeline = null
-
 if (document.querySelector("#home_tl") === document.querySelector('.active'))
 {
     timeline = mockroblog.getHomeTimeline('ProfAvery') //Change to get home timeline
@@ -21,6 +20,8 @@ else if (document.querySelector('#following_tl') === document.querySelector('.ac
 {
     timeline = mockroblog.getUserTimeline('ProfAvery') //Change to getFollowers (will need to implement this in extraData.js)
 }
+
+//Generate div for each blog post
 
 for (let i = 0; i < timeline.length; i++) {
     let timelinePost = document.createElement('div')
