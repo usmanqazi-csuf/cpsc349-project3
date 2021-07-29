@@ -5,13 +5,16 @@ function login() {
     let loginSession = window.sessionStorage;
     let usernameInput = document.getElementById("login-username").value
     let passwordInput = document.getElementById("login-password").value
-    if (mockroblog.authenticateUser(usernameInput, passwordInput)) {
-        loginSession.setItem('username', usernameInput); //Store login info
+    let userInfo = mockroblog.authenticateUser(usernameInput, passwordInput)
+    if(userInfo){
+        //Store login info
+        loginSession.setItem('uid', userInfo.id); 
+        loginSession.setItem('username', userInfo.username);
         window.location.href = "public_timeline.html"
     }
 }
 
-// Login Button functionality
+//Login button functionality
 var loginButton = document.getElementById('login-button');
 loginButton.onclick = function() { login() };
 

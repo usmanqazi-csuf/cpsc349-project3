@@ -3,6 +3,8 @@ import * as mockroblog2 from './extraData.js'
 
 window.mockroblog = mockroblog
 
+//Determine what type of content to display
+
 let timeline = null
 let username = window.sessionStorage.getItem('username')
 
@@ -41,6 +43,10 @@ for (let i = 0; i < timeline.length; i++) {
     document.getElementById("timeline").append(timelinePost)
 }
 
+//Display username in side bar
+
+document.getElementById("username_text").innerText += window.sessionStorage.getItem('username')
+
 // Mobile dropdown navbar
 
 const mobileBtn = document.querySelector("button.mobile-menu-button")
@@ -72,3 +78,13 @@ const newPostArea = document.querySelector(".new-post-area")
 newPostBtn.addEventListener("click", () => {
     newPostArea.classList.toggle("hidden")
 })
+
+//Post button functionality
+document.getElementById('')
+function publishPost() {
+    var postButton = document.getElementById('post-button');
+    var newPostText = document.getElementById('new-post');
+    postButton.onclick = function(){postMessage(window.sessionStorage.getItem('username', newPostText))};
+}
+
+
