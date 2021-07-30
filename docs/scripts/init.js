@@ -3,6 +3,12 @@ import * as mockroblog2 from './extraData.js'
 
 window.mockroblog = mockroblog
 
+// Redirect to login page if not logged in
+
+if (!window.sessionStorage.getItem('username')){
+  window.location.href = 'index.html'
+}
+
 // Determine what type of content to display
 
 let timeline = null
