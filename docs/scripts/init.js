@@ -32,14 +32,15 @@ function logout() {
   window.location.href = './'
 }
 
+document.getElementById('logout-button').onclick = function () { logout() }
+
 // Redirect to login page if not logged in
 
 if (!window.sessionStorage.getItem('username')){
-  alert("Error: You must be logged in!")
   window.location.href = './'
+  window.sessionStorage.setItem('login-error', 'Error: You must log in first!')
 }
 
-document.getElementById('logout-button').onclick = function () { logout() }
 
 // Mobile dropdown navbar
 
