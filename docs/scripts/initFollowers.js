@@ -13,22 +13,26 @@ timeline = mockroblog.getHomeTimeline('ProfAvery')
 let followArr = []
 for (let i = 0; i < timeline.length; i++) {
     let temp = mockroblog2.getUsername(timeline[i].user_id)
-    //NOT FINISHED
-    /*for (let j = 0; j < timeline.length; j++)
+    let duplicate = false
+    for (let j = 0; j < followArr.length; j++)
     {
-        if(temp === (mockroblog2.getUsername(timeline[j].user_id)))
+        if(temp === (followArr[j]))
         {
-            duplicate
+            duplicate = true
         }
-    }*/
-    let timelinePost = document.createElement('div')
-    timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+    }
+    if(!duplicate)
+    {
+        followArr[i] = temp
+        let timelinePost = document.createElement('div')
+        timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
 
-    timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
-    //timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + "</span>" + "<br>"  + "<hr>"
-    //timelinePost.innerHTML += timeline[i].text
-    
-    document.getElementById("timeline").append(timelinePost)
+        timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
+        //timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + "</span>" + "<br>"  + "<hr>"
+        //timelinePost.innerHTML += timeline[i].text
+        
+        document.getElementById("timeline").append(timelinePost)
+    }
 }
 
 // Mobile dropdown navbar
