@@ -1,6 +1,12 @@
 import * as mockroblog from './mockroblog.js'
 window.mockroblog = mockroblog
 
+// Redirect to login page if not logged in
+
+if (window.sessionStorage.getItem('login-error') !== null) {
+  document.getElementById('login-validation').innerHTML = window.sessionStorage.getItem('login-error')
+}
+
 function login () {
   const loginSession = window.sessionStorage
   const usernameInput = document.getElementById('login-username').value
