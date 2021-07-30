@@ -35,9 +35,9 @@ newRegistrationButton.addEventListener('click', () => {
   loginForm.classList.toggle('hidden')
 })
 
-// Login errors
+// Login validation
 function checkForLoginValidation(usernameInput, passwordInput, userInfo) {
-  const loginInfoValidation = document.getElementById('login-info-validation')
+  const loginInfoValidation = document.getElementById('login-validation')
   loginInfoValidation.innerHTML = ''
   if (usernameInput === '' && passwordInput === '') {
     loginInfoValidation.innerHTML = "Error: Please enter a username and password."
