@@ -36,7 +36,6 @@ newRegistrationButton.addEventListener('click', () => {
 })
 
 // Login errors
-
 function checkForLoginValidation(usernameInput, passwordInput, userInfo) {
   const loginInfoMissingErr = document.getElementById('login-info-missing-error')
   loginInfoMissingErr.innerHTML = ''
