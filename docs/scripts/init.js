@@ -23,6 +23,23 @@ if (document.getElementById('home_tl') === document.querySelector('.active')) {
 const loginStatus = document.getElementById('login-status')
 loginStatus.innerHTML = 'Logged in as @' + username
 
+
+// Logout when hitting logout button
+
+function logout() {
+  window.sessionStorage.clear()
+  window.location.href = './'
+}
+
+// Redirect to login page if not logged in
+
+if (!window.sessionStorage.getItem('username')){
+  alert("Error: You must be logged in!")
+  window.location.href = './'
+}
+
+document.getElementById('logout-button').onclick = function () { logout() }
+
 // Generate div for each blog post
 
 for (let i = 0; i < timeline.length; i++) {
@@ -87,18 +104,3 @@ function publishPost () {
 }
 
 document.getElementById('post-button').onclick = function () { publishPost() }
-
-// Logout when hitting logout button
-
-function logout() {
-  window.sessionStorage.clear()
-  window.location.href = './'
-}
-
-// Redirect to login page if not logged in
-
-if (!window.sessionStorage.getItem('username')){
-  window.location.href = './'
-}
-
-document.getElementById('logout-button').onclick = function () { logout() }
