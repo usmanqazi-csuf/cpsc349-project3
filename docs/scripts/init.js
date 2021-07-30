@@ -22,6 +22,9 @@ if (document.getElementById('home_tl') === document.querySelector('.active')) {
 
 const loginStatus = document.getElementById('login-status')
 loginStatus.innerHTML = 'Logged in as @' + username
+const loginStatusMobile = document.getElementById('login-status-mobile')
+loginStatusMobile.innerHTML = 'Logged in as @' + username
+
 
 
 // Logout when hitting logout button
