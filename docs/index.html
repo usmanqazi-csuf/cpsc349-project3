@@ -5,36 +5,74 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/tailwind.css">
-        <script type="module" src="scripts/init.js"></script>
+        <script type="module" src="scripts/authentication.js"></script>
+        <script type="module" src="scripts/registration.js"></script>
     </head>
     <body class="flex h-full flex-col bg-indigo-900 text-white justify-center items-center">
         <!-- Navbar -->
         <header class="flex my-16 text-center justify-center">
-            <h2 class="text-4xl text-center text-white">Stoopneggle</h2>
+            <h2 class="text-5xl text-center text-white">Stoopneggle</h2>
         </header>
 
-        <div class = "flex justify-center my-16">
-            <form id="login" class="grid grid-rows-3 text-right">
-                <label class="row-start-1 my-2" for="username">Username/Email: </label>
-                <label class="row-start-2 my-2" for="password">Password: </label>
-                <input class="row-start-1 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
-                autocomplete="off" type="text" id="username" name="username">
-                <input class="row-start-2 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
-                autocomplete="off" type="text" id="password" name="password">
-                <div class="flex justify-center col-span-2 my-2">
-                    <button class="row-start-3 bg-blue-700 px-2 rounded-lg hover:bg-blue-800">Login</button>
+        <!-- Login div -->
+        <p id="login-info-validation" class="block text-center text-xl text-red-500"></p>
+        <div id="login-form" class="flex flex-col space-y-10 m-16">
+            <div class="flex justify-center bg-indigo-800 p-6 rounded-lg">
+                <div id="login" class="grid grid-rows-3 text-right text-2xl">
+                    <label class="row-start-1 my-2" for="username">Username: </label>
+                    <label class="row-start-2 my-2" for="password">Password: </label>
+                    <input class="row-start-1 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="text" id="login-username" name="username" value="ProfAvery">       <!--DELETE DEFAULT LOGIN VALUES LATER-->
+                    <input class="row-start-2 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="password" id="login-password" name="password" value="password">
+                    <div class="flex justify-center col-span-2 mt-4">
+                        <button id="login-button" class="row-start-3 bg-blue-600 px-2 rounded-lg 
+                        hover:bg-blue-700 transition duration-300">
+                            Login
+                        </button>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div class = "flex flex-col text-center items-center justify-center">
-            <div class="bg-red-900 p-4">
-                <a class="hover:text-indigo-200" href="registration.html">Don't have an account? Click here to register.</a>
+            <div class = "flex text-center items-center justify-center">
+                <button id="new-registration-button" class="bg-red-900 p-3 rounded-xl hover:bg-red-800 transition duration-300">
+                    Don't have an account? Click here to register.
+                </button>
             </div>
         </div>
 
-        <footer class="p-10 text-center">
-            <h2>Copyright @ 2021 CSUF Team 7</h2><br><br>
+        <!-- Registration div -->
+        <div id="registration-form" class="flex flex-col space-y-10 m-16 hidden">
+            <div class="flex justify-center bg-indigo-800 p-6 rounded-lg">
+                <div id="login" class="grid grid-rows-5 text-right text-2xl">
+                    <label class="row-start-1 my-2" for="registration-email">Email: </label>
+                    <label class="row-start-2 my-2" for="registration-username">Username: </label>
+                    <label class="row-start-3 my-2" for="registration-password">Password: </label>
+                    <label class="row-start-4 my-2" for="registration-confirm-password">Confirm Password: </label>
+                    <input class="row-start-1 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="text" id="registration-email" name="email">
+                    <input class="row-start-2 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="text" id="registration-username" name="username">
+                    <input class="row-start-3 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="password" id="registration-password" name="password">
+                    <input class="row-start-4 text-black p-1 m-2 outline-none rounded-sm focus:bg-indigo-100"
+                    autocomplete="off" type="password" id="registration-confirm-password" name="confirm-password">
+                    <div class="flex justify-center col-span-2 mt-4">
+                        <button id="register-button" class="row-start-5 bg-blue-600 px-2 rounded-lg 
+                        hover:bg-blue-700 transition duration-300">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "flex text-center items-center justify-center">
+                <button id="new-login-button" class="bg-red-900 p-3 rounded-xl hover:bg-red-800 transition duration-300">
+                    Already have an account? Click here to login.
+                </button>
+            </div>
+        </div>
+
+        <footer class="m-16 text-center">
+            <h2>Copyright @ 2021 CSUF Team 7</h2>
         </footer>
         <!-- <a href="about.html" class=""><img src="./images/logo.png" alt="The Beloved One"></a> -->
     </body>
