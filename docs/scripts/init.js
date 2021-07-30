@@ -88,17 +88,16 @@ function publishPost () {
 
 document.getElementById('post-button').onclick = function () { publishPost() }
 
-
-// Redirect to login page if not logged in
-
-if (!window.sessionStorage.getItem('username')){
-  window.location.href = './'
-}
-
 // Logout when hitting logout button
 
 function logout() {
   window.sessionStorage.clear()
+  window.location.href = './'
+}
+
+// Redirect to login page if not logged in
+
+if (!window.sessionStorage.getItem('username')){
   window.location.href = './'
 }
 
