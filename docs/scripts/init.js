@@ -8,13 +8,13 @@ window.mockroblog = mockroblog
 let timeline = null
 const username = window.sessionStorage.getItem('username')
 
-if (document.querySelector('#home_tl') === document.querySelector('.active')) {
+if (document.getElementById('home_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getHomeTimeline(username)
-} else if (document.querySelector('#user_tl') === document.querySelector('.active')) {
+} else if (document.getElementById('user_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getUserTimeline(username)
-} else if (document.querySelector('#public_tl') === document.querySelector('.active')) {
+} else if (document.getElementById('public_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getPublicTimeline()
-} else if (document.querySelector('#following_tl') === document.querySelector('.active')) {
+} else if (document.getElementById('following_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getPublicTimeline() // Change to getFollowers (will need to implement this in extraData.js)
 }
 
@@ -38,9 +38,9 @@ for (let i = 0; i < timeline.length; i++) {
 
 // Mobile dropdown navbar
 
-const mobileBtn = document.querySelector('button.mobile-menu-button')
-const mobileMenu = document.querySelector('.mobile-menu')
-const menuBtnIcon = document.querySelector('#mobile-menu-button-icon-menu')
+const mobileBtn = document.getElementById('mobile-menu-button')
+const mobileMenu = document.getElementById('mobile-menu')
+const menuBtnIcon = document.getElementById('mobile-menu-button-icon-menu')
 
 mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden')
@@ -58,8 +58,8 @@ mobileBtn.addEventListener('click', () => {
 
 // New post dropdown menu
 
-const newPostBtn = document.querySelector('button.new-post-button')
-const newPostArea = document.querySelector('.new-post-area')
+const newPostBtn = document.getElementById('new-post-button')
+const newPostArea = document.getElementById('new-post-area')
 
 newPostBtn.addEventListener('click', () => {
   newPostArea.classList.toggle('hidden')
@@ -81,7 +81,8 @@ function publishPost () {
     newPostDiv.innerHTML += "<span class = 'float-right'>" + postData.timestamp + '</span>' + '<br>' + '<hr>'
     newPostDiv.innerHTML += postData.text
 
-    document.querySelector('.new-post-area').after(newPostDiv)
+    document.getElementById('new-post-area').after(newPostDiv)
+    newPostArea.classList.toggle("hidden")
   }
 }
 document.getElementById('post-button').onclick = function () { publishPost() }

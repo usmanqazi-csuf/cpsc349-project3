@@ -38,15 +38,15 @@ newRegistrationButton.addEventListener('click', () => {
 // Login errors
 
 function checkForLoginValidation(usernameInput, passwordInput, userInfo) {
-  const loginInfoMissingErr = document.getElementById('login-info-missing-error')
-  loginInfoMissingErr.innerHTML = ''
+  const loginInfoValidation = document.getElementById('login-info-validation')
+  loginInfoValidation.innerHTML = ''
   if (usernameInput === '' && passwordInput === '') {
-    loginInfoMissingErr.innerHTML = "Error: Please enter a username and password."
+    loginInfoValidation.innerHTML = "Error: Please enter a username and password."
   } else if (usernameInput === '') {
-    loginInfoMissingErr.innerHTML = "Error: Please enter a username."
+    loginInfoValidation.innerHTML = "Error: Please enter a username."
   } else if (passwordInput === '') {
-    loginInfoMissingErr.innerHTML = "Error: Please enter a password."
+    loginInfoValidation.innerHTML = "Error: Please enter a password."
   } else if (!userInfo) {
-    loginInfoMissingErr.innerHTML = "Error: The username and/or password was incorrect. Please try again."
+    loginInfoValidation.innerHTML = "Error: The username and/or password was incorrect. Please try again."
   }
 }
