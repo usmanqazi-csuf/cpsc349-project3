@@ -33,10 +33,11 @@ function logout() {
 }
 
 document.getElementById('logout-button').onclick = function () { logout() }
+document.getElementById('mobile-logout-button').onclick = function () { logout() }
 
 // Redirect to login page if not logged in
 
-if (!window.sessionStorage.getItem('username')){
+if (!window.sessionStorage.getItem('username')) {
   window.location.href = './'
   window.sessionStorage.setItem('login-error', 'Error: You must log in first!')
 }
