@@ -14,15 +14,16 @@ if (document.getElementById('home_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getUserTimeline(username)
 } else if (document.getElementById('public_tl') === document.querySelector('.active')) {
   timeline = mockroblog.getPublicTimeline()
-} else if (document.getElementById('following_tl') === document.querySelector('.active')) {
-  timeline = mockroblog.getPublicTimeline() // Change to getFollowers (will need to implement this in extraData.js)
 }
 
 // Logged in as {username} on navbar
 
-const loginStatus = document.getElementById('login-status')
-loginStatus.innerHTML = 'Logged in as @' + username
+const loginStatus = document.getElementsByClassName('login-status')
 
+for (let i = 0; i < loginStatus.length; i++)
+{
+  loginStatus[i].innerHTML = 'Logged in as @' + username
+}
 
 // Logout when hitting logout button
 
@@ -39,19 +40,6 @@ if (!window.sessionStorage.getItem('username')){
 }
 
 document.getElementById('logout-button').onclick = function () { logout() }
-
-// Generate div for each blog post
-
-for (let i = 0; i < timeline.length; i++) {
-  const timelinePost = document.createElement('div')
-  timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700 break-words'
-
-  timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
-  timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + '</span>' + '<br>' + '<hr>'
-  timelinePost.innerHTML += timeline[i].text
-
-  document.getElementById('timeline').append(timelinePost)
-}
 
 // Mobile dropdown navbar
 
@@ -72,6 +60,19 @@ mobileBtn.addEventListener('click', () => {
     menuBtnIcon.setAttribute('id', 'mobile-menu-button-icon-menu')
   }
 })
+
+// Generate div for each blog post
+
+for (let i = 0; i < timeline.length; i++) {
+  const timelinePost = document.createElement('div')
+  timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700 break-words'
+
+  timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
+  timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + '</span>' + '<br>' + '<hr>'
+  timelinePost.innerHTML += timeline[i].text
+
+  document.getElementById('timeline').append(timelinePost)
+}
 
 // New post dropdown menu
 
