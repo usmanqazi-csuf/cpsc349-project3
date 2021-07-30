@@ -95,7 +95,7 @@ function publishPost () {
     const newPostDiv = document.createElement('div')
     newPostDiv.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
 
-    newPostDiv.innerHTML += mockroblog2.getUsername(parseInt(postData.user_id))
+    newPostDiv.innerHTML += window.sessionStorage.getItem('username')
     newPostDiv.innerHTML += "<span class = 'float-right'>" + postData.timestamp + '</span>' + '<br>' + '<hr>'
     newPostDiv.innerHTML += postData.text
 
