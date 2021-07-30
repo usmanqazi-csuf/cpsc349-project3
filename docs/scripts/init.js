@@ -3,12 +3,6 @@ import * as mockroblog2 from './extraData.js'
 
 window.mockroblog = mockroblog
 
-// Redirect to login page if not logged in
-
-if (!window.sessionStorage.getItem('username')){
-  window.location.href = 'index.html'
-}
-
 // Determine what type of content to display
 
 let timeline = null
@@ -91,4 +85,21 @@ function publishPost () {
     newPostArea.classList.toggle("hidden")
   }
 }
+
 document.getElementById('post-button').onclick = function () { publishPost() }
+
+
+// Redirect to login page if not logged in
+
+if (!window.sessionStorage.getItem('username')){
+  window.location.href = './'
+}
+
+// Logout when hitting logout button
+
+function logout() {
+  window.sessionStorage.clear()
+  window.location.href = './'
+}
+
+document.getElementById('logout-button').onclick = function () { logout() }
