@@ -6,6 +6,7 @@ function login () {
   const usernameInput = document.getElementById('login-username').value
   const passwordInput = document.getElementById('login-password').value
   const userInfo = mockroblog.authenticateUser(usernameInput, passwordInput)
+  checkForLoginValidation(usernameInput, passwordInput, userInfo)
   if (userInfo) {
     // Store login info
     loginSession.setItem('uid', userInfo.id)
@@ -33,3 +34,19 @@ newRegistrationButton.addEventListener('click', () => {
   registrationForm.classList.toggle('hidden')
   loginForm.classList.toggle('hidden')
 })
+
+// Login errors
+
+function checkForLoginValidation(usernameInput, passwordInput, userInfo) {
+  const loginInfoMissingErr = document.getElementById('login-info-missing-error')
+  loginInfoMissingErr.innerHTML = ''
+  if (usernameInput === '' && passwordInput === '') {
+    loginInfoMissingErr.innerHTML = "Error: Please enter a username and password."
+  } else if (usernameInput === '') {
+    loginInfoMissingErr.innerHTML = "Error: Please enter a username."
+  } else if (passwordInput === '') {
+    loginInfoMissingErr.innerHTML = "Error: Please enter a password."
+  } else if (!userInfo) {
+    loginInfoMissingErr.innerHTML = "Error: The username and/or password was incorrect. Please try again."
+  }
+}
