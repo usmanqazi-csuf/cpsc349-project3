@@ -13,9 +13,9 @@
         </header>
 
         <!-- Navbar -->
-        <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1">
+        <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1 lg:row-span-3">
             <div class="col-start-2">
-                <div class="fixed h-full w-44 flex flex-col text-center justify-center">
+                <div class="fixed h-full w-44 flex flex-col text-center justify-center bg-opacity-50 bg-purple-800">
                     <span id="login-status" class="p-4">Logged in as @{username}</span>
                     <hr>
                     <a class="hover:bg-purple-700 p-5" id="home_tl" href="home_timeline.html">Home Timeline</a> 
@@ -42,7 +42,7 @@
                 <a class="block hover:bg-purple-700 p-5 bg-purple-800 active" id="user_tl" href="user_timeline.html">User Timeline</a> 
                 <a class="block hover:bg-purple-700 p-5" id="public_tl" href="public_timeline.html">Public Timeline</a>
                 <a class="block hover:bg-purple-700 p-5" id="following_tl" href="followers.html">Following</a>  
-                <a class="block hover:bg-purple-700 p-5"href="./">Logout</a>
+                <button id="logout-button" class="hover:bg-purple-700 p-5">Logout</button>
             </div>
         </div>
         
@@ -62,8 +62,21 @@
             </div>
         </div>
 
-        <footer class="col-span-4 p-10 text-center">
-            <p>HEY, DONT LOOK DOWN HERE!!!</p>
+        <!-- Footer -->
+        <footer class="col-span-2 p-10 text-center">
+            <hr class="h-px bg-gray-800 border-none w-auto m-center">
+            <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+                <div>
+                    <a href="home_timeline.html" class="text-xl font-bold">Brand</a>
+                </div>
+                <div class="flex mt-4 md:m-0">
+                    <div class="-mx-4">
+                      <a href="about.html" class="px-4 text-sm">About</a>
+                      <a href="#" class="px-4 text-sm">Contact</a>
+                  	</div>
+                </div>
+            </div>
         </footer>
+
     </body>
 </html>
