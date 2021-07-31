@@ -67,16 +67,43 @@ mobileBtn.addEventListener('click', () => {
 
 if (timeline !== null) {
   for (let i = 0; i < timeline.length; i++) {
+    let tempID = mockroblog2.getUsername(timeline[i].user_id)
     const timelinePost = document.createElement('div')
     timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
     timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
-    + "<p>" + mockroblog2.getUsername(timeline[i].user_id) + "</p>"
-    + "<button class='follow-button bg-indigo-500 rounded-lg p-1'> Follow </button></div><hr>"
+    + "<p>" + tempID + "</p>"
+    + "<button class='"+tempID+"-follow-button bg-indigo-500 rounded-lg p-1'></button></div><hr>"
     timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
     timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
-
   
     document.getElementById('timeline').append(timelinePost)
+    // follow/unfollow
+    let followArr = window.sessionStorage.getItem("follow-arr")
+    followArr = JSON.parse(followArr)
+    //console.log("followArr ==" + followArr)
+    let found = false
+    for(let j = 0; j< followArr.length; j++)
+    {
+      //console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
+      if(tempID === followArr[j]) // if found, button is unfollow
+      {
+          console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
+          found = true
+          let buttonArr = document.getElementsByClassName(tempID+"-follow-button")
+          for(let k = 0; k < buttonArr.length; k++)
+          {
+              buttonArr[k].innerHTML = "UNFOLLOW"
+          }
+      }
+    }
+    if(!found)  // if not found, button is follow
+    {
+      let buttonArr = document.getElementsByClassName(tempID+"-follow-button")
+      for(let l = 0; l < buttonArr.length; l++)
+      {
+        buttonArr[l].innerHTML = "FOLLOW!"
+      }
+    }
   }
 }
 

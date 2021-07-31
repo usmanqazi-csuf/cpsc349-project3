@@ -24,7 +24,7 @@ for (let i = 0; i < timeline.length; i++) {
     }
     if(!duplicate)
     {
-        followArr[i] = temp
+        followArr.push(temp)
         let timelinePost = document.createElement('div')
         timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
 
@@ -34,4 +34,7 @@ for (let i = 0; i < timeline.length; i++) {
         
         document.getElementById("timeline").append(timelinePost)
     }
+    //console.log("tempID ==" + temp + " followArr[i]==" + followArr[i])
 }
+window.sessionStorage.setItem("follow-arr", JSON.stringify(followArr))
+console.log("followArrLocal==" + followArr + " followArrStorage==" + window.sessionStorage.getItem("follow-arr"))
