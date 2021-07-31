@@ -20,12 +20,15 @@ for (let i = 0; i < timeline.length; i++) {
     if (!duplicate)
     {
         followArr.push(temp)
-        if (window.location.pathname === '/followers.html') {
+        if (window.location.pathname === '/following.html') {
             let timelinePost = document.createElement('div')
-            timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+            timelinePost.className = 'p-5 m-5 rounded-lg bg-black'
+
+            timelinePost.innerHTML = "<div class='flex flex-row text-center items-center justify-between'>"
+            + mockroblog2.getUsername(timeline[i].user_id)
+            + "<button class='" + temp + "-follow-button rounded-lg p-1 bg-indigo-500 "
+            + "hover:bg-purple-700 transition duration-300'>Unfollow</button></div>"
     
-            timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
-            
             document.getElementById("timeline").append(timelinePost)
         }
     }

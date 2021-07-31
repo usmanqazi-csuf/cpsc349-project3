@@ -73,7 +73,7 @@ if (window.location.pathname !== '/about.html') {
       if (userId !== window.sessionStorage.getItem("username"))
       {
         followOrUnfollowButton = "<button class='" + userId + "-follow-or-unfollow-button "
-        + "bg-indigo-500 rounded-lg p-1 hover:bg-purple-700 transition duration-300'></button>"
+        + "rounded-lg p-1 bg-indigo-500 hover:bg-purple-700 transition duration-300'></button>"
       }
       const timelinePost = document.createElement('div')
       timelinePost.className = 'p-5 m-5 rounded-lg bg-black'
@@ -114,7 +114,7 @@ if (window.location.pathname !== '/about.html') {
 
 // New post dropdown menu
 
-if (window.location.pathname !== '/followers.html' && window.location.pathname !== '/about.html') {
+if (window.location.pathname !== '/following.html' && window.location.pathname !== '/about.html') {
   const newPostBtn = document.getElementById('new-post-button')
   const newPostArea = document.getElementById('new-post-area')
   
@@ -144,6 +144,6 @@ function publishPost () {
   }
 }
 
-if (window.location.pathname !== '/followers.html' && window.location.pathname !== '/about.html') {
+if (window.location.pathname !== '/following.html' && window.location.pathname !== '/about.html') {
   document.getElementById('post-button').onclick = function () { publishPost() }
 }
