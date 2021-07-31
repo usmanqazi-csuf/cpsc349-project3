@@ -65,15 +65,19 @@ mobileBtn.addEventListener('click', () => {
 
 // Generate div for each blog post
 
-for (let i = 0; i < timeline.length; i++) {
-  const timelinePost = document.createElement('div')
-  timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700 break-words'
+if (timeline !== null) {
+  for (let i = 0; i < timeline.length; i++) {
+    const timelinePost = document.createElement('div')
+    timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+    timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
+    + "<p>" + mockroblog2.getUsername(timeline[i].user_id) + "</p>"
+    + "<button class='follow-button bg-indigo-500 rounded-lg p-1'> Follow </button></div><hr>"
+    timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
+    timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
 
-  timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
-  timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + '</span>' + '<br>' + '<hr>'
-  timelinePost.innerHTML += timeline[i].text
-
-  document.getElementById('timeline').append(timelinePost)
+  
+    document.getElementById('timeline').append(timelinePost)
+  }
 }
 
 // New post dropdown menu
@@ -97,7 +101,7 @@ function publishPost () {
     const newPostDiv = document.createElement('div')
     newPostDiv.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
 
-    newPostDiv.innerHTML += mockroblog2.getUsername(parseInt(postData.user_id))
+    newPostDiv.innerHTML += window.sessionStorage.getItem('username')
     newPostDiv.innerHTML += "<span class = 'float-right'>" + postData.timestamp + '</span>' + '<br>' + '<hr>'
     newPostDiv.innerHTML += postData.text
 
