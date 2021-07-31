@@ -20,7 +20,7 @@ for (let i = 0; i < timeline.length; i++) {
     if (!duplicate)
     {
         followArr.push(temp)
-        if (window.location.pathname === '/following.html') {
+        if (window.location.pathname.includes('/following.html')) {
             let timelinePost = document.createElement('div')
             timelinePost.className = 'p-5 m-5 rounded-lg bg-black'
 
