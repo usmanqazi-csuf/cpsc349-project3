@@ -114,7 +114,7 @@ if (window.location.pathname !== '/about.html') {
 
 // New post dropdown menu
 
-if (window.location.pathname !== '/following.html' && window.location.pathname !== '/about.html') {
+if (window.location.pathname !== './following.html' && window.location.pathname !== '/about.html') {
   const newPostBtn = document.getElementById('new-post-button')
   const newPostArea = document.getElementById('new-post-area')
   
