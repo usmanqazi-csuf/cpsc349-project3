@@ -87,7 +87,7 @@ if (timeline !== null) {
       //console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
       if(tempID === followArr[j]) // if found, button is unfollow
       {
-          console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
+          //console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
           found = true
           let buttonArr = document.getElementsByClassName(tempID+"-follow-button")
           for(let k = 0; k < buttonArr.length; k++)

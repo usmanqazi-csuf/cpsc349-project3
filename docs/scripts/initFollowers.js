@@ -28,7 +28,9 @@ for (let i = 0; i < timeline.length; i++) {
         let timelinePost = document.createElement('div')
         timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
 
-        timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
+        timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id) 
+        + "<div class='flex flex-row text-center items-center justify-between mb-2'>"
+        + "<button class='"+temp+"-follow-button bg-indigo-500 rounded-lg p-1'>UNFOLLOW</button></div><hr>"
         //timelinePost.innerHTML += "<span class = 'float-right'>" + timeline[i].timestamp + "</span>" + "<br>"  + "<hr>"
         //timelinePost.innerHTML += timeline[i].text
         
