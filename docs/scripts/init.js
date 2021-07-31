@@ -81,14 +81,13 @@ if (timeline !== null) {
     timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
   
     document.getElementById('timeline').append(timelinePost)
-    // follow/unfollow
+
+    // Follow/Unfollow
     let followArr = window.sessionStorage.getItem("follow-arr")
     followArr = JSON.parse(followArr)
-    //console.log("followArr ==" + followArr)
     let found = false
-    for(let j = 0; j< followArr.length; j++)
+    for(let j = 0; j < followArr.length; j++)
     {
-      //console.log("followArr[j]ID=="+followArr[j]+" userId ==" + userId)
       if(userId === followArr[j]) // if found, button is unfollow
       {
           console.log("followArr[j]ID=="+followArr[j]+" userId ==" + userId)
