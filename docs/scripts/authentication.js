@@ -1,6 +1,12 @@
 import * as mockroblog from './mockroblog.js'
 window.mockroblog = mockroblog
 
+// Redirect to login page if not logged in
+
+if (window.sessionStorage.getItem('login-error') !== null) {
+  document.getElementById('login-validation').innerHTML = window.sessionStorage.getItem('login-error')
+}
+
 function login () {
   const loginSession = window.sessionStorage
   const usernameInput = document.getElementById('login-username').value
@@ -35,17 +41,68 @@ newRegistrationButton.addEventListener('click', () => {
   loginForm.classList.toggle('hidden')
 })
 
-// Login errors
+// Login validation
 function checkForLoginValidation(usernameInput, passwordInput, userInfo) {
-  const loginInfoValidation = document.getElementById('login-info-validation')
-  loginInfoValidation.innerHTML = ''
+  const loginValidation = document.getElementById('login-validation')
+  loginValidation.innerHTML = ''
   if (usernameInput === '' && passwordInput === '') {
-    loginInfoValidation.innerHTML = "Error: Please enter a username and password."
+    loginValidation.innerHTML = "Error: Please enter a username and password."
   } else if (usernameInput === '') {
-    loginInfoValidation.innerHTML = "Error: Please enter a username."
+    loginValidation.innerHTML = "Error: Please enter a username."
   } else if (passwordInput === '') {
-    loginInfoValidation.innerHTML = "Error: Please enter a password."
+    loginValidation.innerHTML = "Error: Please enter a password."
   } else if (!userInfo) {
-    loginInfoValidation.innerHTML = "Error: The username and/or password was incorrect. Please try again."
+    loginValidation.innerHTML = "Error: The username and/or password was incorrect. Please try again."
   }
+}
+
+function register () {
+  const loginSession = window.sessionStorage
+  const usernameInput = document.getElementById('registration-username').value   
+  const emailInput = document.getElementById('registration-email').value
+  const passwordInput = document.getElementById('registration-password').value
+  const confirmPasswordInput = document.getElementById('registration-confirm-password').value
+  const userInfo = mockroblog.createUser(usernameInput, emailInput, passwordInput)
+  if (checkForRegistrationValidation(usernameInput, emailInput, passwordInput, confirmPasswordInput, userInfo)) {
+      // Store login info
+      loginSession.setItem('uid', userInfo.id)
+      loginSession.setItem('username', userInfo.username)
+      window.location.href = 'home_timeline.html'
+  }
+}
+
+const registerButton = document.getElementById('register-button')
+registerButton.onclick = function () { register() }
+
+// Registration validation
+function checkForRegistrationValidation(usernameInput, emailInput, passwordInput, confirmPasswordInput, userInfo) {
+  const registrationValidation = document.getElementById('registration-validation')
+  registrationValidation.innerHTML = ''
+  if (emailInput === '' && usernameInput === '' && passwordInput === '') {
+      registrationValidation.innerHTML = "Error: Please enter an email, username, and password."
+  } else if (emailInput === '') {
+      registrationValidation.innerHTML = "Error: Please enter an email."
+  } else if (passwordInput === '') {
+      registrationValidation.innerHTML = "Error: Please enter your password."
+  } else if (confirmPasswordInput === '') {
+      registrationValidation.innerHTML = "Error: Please confirm your password."
+  } else if (passwordInput !== confirmPasswordInput) {
+      registrationValidation.innerHTML = "Error: Passwords do not match."
+  } else if (!userInfo) {
+      registrationValidation.innerHTML = "Error: Username is already taken."
+  } else {
+      return true
+  }
+}
+
+// Clear validation errors if switching to registration
+
+newRegistrationButton.onclick = function () {
+  document.getElementById('login-validation').innerHTML = ''
+}
+
+// Clear validation errors if switching to login
+
+newLoginButton.onclick = function () {
+  document.getElementById('registration-validation').innerHTML = ''
 }

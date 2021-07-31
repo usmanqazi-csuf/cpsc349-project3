@@ -9,6 +9,7 @@ export function getUsername (userId) {
     case 1: return 'ProfAvery'
     case 2: return 'KevinAWortman'
     case 3: return 'Beth_CSUF'
+    case 4 : return'New User'
     default: return 'Unknown'
   }
 }
