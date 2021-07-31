@@ -67,12 +67,16 @@ mobileBtn.addEventListener('click', () => {
 
 if (timeline !== null) {
   for (let i = 0; i < timeline.length; i++) {
-    let tempID = mockroblog2.getUsername(timeline[i].user_id)
+    let userId = mockroblog2.getUsername(timeline[i].user_id)
+    let followOrUnfollowButton = ''
+    if (userId !== window.sessionStorage.getItem("username"))
+    {
+      followOrUnfollowButton = "<button class='" + userId + "-follow-or-unfollow-button bg-indigo-500 rounded-lg p-1'></button>"
+    }
     const timelinePost = document.createElement('div')
     timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
     timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
-    + "<p>" + tempID + "</p>"
-    + "<button class='"+tempID+"-follow-button bg-indigo-500 rounded-lg p-1'></button></div><hr>"
+    + "<p>" + userId + "</p>" + followOrUnfollowButton + "</div><hr>"
     timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
     timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
   
@@ -84,12 +88,12 @@ if (timeline !== null) {
     let found = false
     for(let j = 0; j< followArr.length; j++)
     {
-      //console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
-      if(tempID === followArr[j]) // if found, button is unfollow
+      //console.log("followArr[j]ID=="+followArr[j]+" userId ==" + userId)
+      if(userId === followArr[j]) // if found, button is unfollow
       {
-          console.log("followArr[j]ID=="+followArr[j]+" tempID ==" + tempID)
+          console.log("followArr[j]ID=="+followArr[j]+" userId ==" + userId)
           found = true
-          let buttonArr = document.getElementsByClassName(tempID+"-follow-button")
+          let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
           for(let k = 0; k < buttonArr.length; k++)
           {
               buttonArr[k].innerHTML = "UNFOLLOW"
@@ -98,7 +102,7 @@ if (timeline !== null) {
     }
     if(!found)  // if not found, button is follow
     {
-      let buttonArr = document.getElementsByClassName(tempID+"-follow-button")
+      let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
       for(let l = 0; l < buttonArr.length; l++)
       {
         buttonArr[l].innerHTML = "FOLLOW!"
