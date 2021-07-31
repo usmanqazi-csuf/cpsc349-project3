@@ -1,149 +1,142 @@
-<head>
-    <title>Stoopneggle</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/tailwind.css">
-    <script type="module" src="scripts/init.js"></script>
-</head>
-<body class="bg-indigo-900 text-white">
-<nav class="relative w-full flex items-center justify-between flex-wrap bg-pink-300">
-    <h2 class="text-4xl flex-1 text-center text-white">Stoopneggle<img src="./images/logo.png" alt="The Beloved"></h2>
-    <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500 text-2xl">
-        <li class="p-8"><a href="home_timeline.html" class="{% if page.url == '/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Home</a></li>
-        <li class="p-8"><a href="index.html" class="{% if page.url == '/dog/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Login</a></li>
-        <li class="p-8"><a href="user_timeline.html" class="{% if page.url == '/about/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Users</a></li>
-        <li class="p-8"><a href="registration.html" class="{% if page.url == '/about/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Register</a></li>
-        <li class="p-8"><a href="public_timeline.html" class="{% if page.url == '/about/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Public</a></li>
-        <li class="p-8"><a href="followers.html" class="{% if page.url == '/cat/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto">Following</a></li>
-        <li class="p-8"><a href="about.html" class="{% if page.url == '/about/' %}
-            underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0
-            text-white hover:text-blue-900 mr-auto active text-purple-700">About</a></li>
-    </ul>
-</nav>
-<div>
-    <h2 class="relative flex text-6xl font-semibold justify-center items-center mt-8 mb-2">The Stoopneggle Statement!</h2>
-    <p class="pt-4 text-center mx-16">Tired of sundering important relationships with your friends and family 
-        via charged political posts on Facebook? Are you BORED of getting fired over that Tweet your coworker deemed 
-        "insensitive" or "culturally problematic?"
-        Well, tire and bore no longer, for you can now do those very same things on yet another NEW social media space,
-        STOOPNEGGLE CENTRAL! Follow your friends, then unfollow them when they make an absurd post about a political topic
-        you feel strongly about! (And don't worry, we'll make sure they are subtly alerted with a soft, gentle 
-        A-OOOGHA horn that will pop up on their phone regardless of the hour, and cannot be silenced without 
-        unlocking their device!) Want to find out what the latest insane tin-foil hat conspiracy Uncle Mel is pedalling this week?
-        Well your in luck! Look up that dear old Uncle Mel and smack some sense into his turkey goiter. Then block him when
-        he sends you an unfriending A-OOOGHA in a petty act of defiance despite his action of unfriending you in the first 
-        place sort of implying that he wasn't planning on talking to you again anytime soon to begin with. 
-        (Well, at least until your forced to sit across from him at Thanksgiving. Hooray!!!1!1) And with a singular, epic 
-        chatroom containing a live stream of comments from all our users all over the world, you can get caught up in the convo 
-        before you can even scream "it wasn't me! It was the Ambien!!!" 
-        So what are you waiting for? With all these Doofy possibiities and more, the future is nigh, and it has one big screaming, 
-        exhilarating question for you...
-        ...are you a Doofus, or are you a Dallant? 
-                
-            And moreover, how many Stoops can your Doofs neggle?
-            
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mockroblog</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/tailwind.css">
+        <script type="module" src="scripts/init.js"></script>
+    </head>
+    <body class="grid grid-cols-4 gap-5 bg-indigo-900 text-white">
+        <!-- Header -->
+        <header class="flex col-start-2 col-end-4 text-center items-center justify-center my-16">
+            <h2 class="text-center text-5xl text-white">Stoopneggle</h2>
+        </header>
 
-<div class="bg-green-500">
-<h1 class="text-4xl pt-8 text-center mx-16">Our Doofy Teamsters!!!</h1>
-<h3 class="text-center mx-16">How many Doofs can you fit in a bagel?</h3>
-</div>
+        <!-- Navbar -->
+        <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1 lg:row-span-3">
+            <div class="col-start-2">
+                <div class="fixed h-full w-44 flex flex-col text-center justify-center bg-opacity-50 bg-purple-800">
+                    <span class="login-status p-4">Logged in as @{username}</span> 
+                    <hr>
+                    <a class="hover:bg-purple-700 p-5 bg-purple-800 active" id="home_tl" href="home_timeline.html">Home Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5" id="user_tl" href="user_timeline.html">User Timeline</a> 
+                    <a class="hover:bg-purple-700 p-5" id="public_tl" href="public_timeline.html">Public Timeline</a>
+                    <a class="hover:bg-purple-700 p-5" id="following_tl" href="followers.html">Following</a>
+                    <hr>
+                    <button id="logout-button" class="hover:bg-purple-700 p-5">Logout</button>
+                </div>
+            </div>
+        </nav>
 
-<div class="about-us-section bg-pink-400">
-    <h3 class="py-10 relative flex text-2xl font-semibold justify-center items-center">DOOFMEISTER CHRIS!</h3>
-    <div class= "relative flex justify-center">
-        <img src="./images/tym2rite.png" alt="tym2rite!">
-    </div>
-    <p class="text-center px-48">     A semi-dedicated Christorian, Venetian mask collector, improv enthusiast,
-        and professional time-waster, I like to focus on the hallucinogenic aspects of web design,
-        such as "would this About Me page taste better if there was stock music playing whilst
-        attempting to navigate it?"
-        You can find me in my room most days, listening to Skynd and coding terrible videogames.
-        Or banging on the piano loudly and badly much to my dearest mother's chagrin.
-    </p>
-</div>
+        <!-- Mobile Navbar -->
+        <div class="lg:hidden col-start-2 col-end-4 text-center justify-center items-center">
+            <button id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 20 20" fill="currentColor">
+                    <path id="mobile-menu-button-icon-menu" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 
+                    2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div id="mobile-menu" class="hidden bg-indigo-800">
+                <span class="login-status block p-5">Logged in as {username}</span> 
+                <a class="block hover:bg-purple-700 p-5 bg-purple-800 active" id="home_tl" href="home_timeline.html">Home Timeline</a> 
+                <a class="block hover:bg-purple-700 p-5" id="user_tl" href="user_timeline.html">User Timeline</a> 
+                <a class="block hover:bg-purple-700 p-5" id="public_tl" href="public_timeline.html">Public Timeline</a>
+                <a class="block hover:bg-purple-700 p-5" id="following_tl" href="followers.html">Following</a>  
+                <button id="mobile-logout-button" class="block w-full hover:bg-purple-700 p-5">Logout</button>
+            </div>
+        </div>
 
-<div class="about-us-section bg-yellow-600">
-    <h3 class="py-16 relative flex text-2xl font-semibold justify-center items-center">MEATMASTER MANNY!</h3>
-    <div class="relative flex justify-center mb-8">
-        <img src="./images/Manny.jpg" alt="MANUEL">
-    </div>
-    <p class="text-center px-48">    I flew on an airplane sometime before starting this. During the flight, an attendent
-        asked me if I'd ever been to Florida, to which I responed that I'd never been there,
-        but that I knew of Florida, and had read extensively on the subject, as well as the 
-        Gilded era of New York. The Gilded era, that sweet, wonderful period just before 
-        prohibition, when the Charleston was but a glimmer in the eyes of Ward McAllister 
-        and his elite 400.
-    </p>
-</div>
-<div class="mb-14 bg-green-500">
-    <h3 class="py-16 relative flex text-2xl font-semibold justify-center items-center">YET-TO-BE-NICKNAMED YU!</h3>
-    <div class="relative flex justify-center">
-        <img src="./images/placeholder.jpg" alt="YU">
-    </div>
-    <p class="text-center px-48 mt-8">My name is Yu. I love the color orange and have two anacondas named
-            Mary Lee Walsh and Megan Schroeder. On weekends, I play bocce ball with my sister and her cousin from Omaha
-            while our parents ride their clydesdales down to the beach to laugh at people in zippers.
-    </p>
-</div>
-<div class="mb-14">
-    <h3 class="py-16 relative flex text-2xl font-semibold justify-center items-center">AND STANLEY!</h3>
-    <div class="relative flex justify-center">
-        <img src="./images/stan.png" alt="STANLEY">
-    </div>
-    <p class="text-center px-48 mt-8">All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. Fredric Baur is buried in a Pringles can. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-        All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-    </p>
-</div>
-<div class="mb-14 bg-red-800">
-    <h3 class="py-16 relative flex text-2xl font-semibold justify-center items-center">USMAN "THE SHOTGUN" QAZI!</h3>
-    <div class="relative flex justify-center">
-        <img src="./images/usman.jpeg" alt="USMAN">
-    </div>
-    <p class="text-center px-48 mt-8">You might have seen a couple different names for me. My name is Mohammad U. Qazi, 
-        but I go by middle name, Usman. I know enough about HTML and CSS to make my own static website, 
-        which I already have, but I am here mainly to learn JavaScript and improve my web development skills.
-    </p>
-</div>
-<div class="mb-14">
-    <h3 class="py-16 relative flex text-2xl font-semibold justify-center items-center">BAGEL "THE BELOVED" STOOPNEGGLE!</h3>
-    <div class="relative flex justify-center">
-        <img src="./images/Bagel_the_Stoopneggle.png" alt="Bagel the Stoopneggle">
-    </div>
-    <p class="text-center px-48 mt-8">Our beloved, loyal, and devoted mascot (and former SCP), he expects nothing less of our users! 
-        If you do anything disloyal or unbeloved, you might wake up one day with him crawling around on your bedroom ceiling. 
-        So watch out!
-    </p>
-</div>
-</body>
-<footer>
-    <h2>Email Us!</h2>
-            <ul class="bg-black">
-                <a href="mailto:mperez5891@csu.fullerton.edu">Manny!</a>
-                <a href="mailto:nolan794@csu.fullerton.edu">Stanley!</a>
-                <a href="mailto:usmanqazi@csu.fullerton.edu">Usman!</a>
-                <a href="mailto:cweichlein@csu.fullerton.edu">Chris!</a>
-            </ul>
-</footer>
+        <!-- Main Content Content -->
+        <main class="content-container col-start-2 col-end-4 row-span-1">
+            <!-- Chris Card-->
+            <div class="about-card-img-left md:flex shadow-lg mx-6 md:mx-auto max-w-lg md:max-w-2xl h-64 bg-purple-800 rounded">
+                <img class="card-image h-full w-full md:w-1/3 object-cover rounded-lg rounded-r-none pb-5/6" src="./images/tym2rite.png" alt="Chris Weichlein">
+                <div class="card-info w-full md:w-2/3 px-4 py-4 bg-white rounded-lg relative">
+                    <div class="flex justify-center">
+                        <h2 class="text-xl text-gray-800 font-bold">Christopher Weichlein</h2>
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">
+                        A semi-dedicated Christorian, Venetian mask collector, improv enthusiast,
+                        and professional time-waster, I like to focus on the hallucinogenic aspects of web design,
+                        such as "would this About Me page taste better if there was stock music playing whilst
+                        attempting to navigate it?"
+                        You can find me in my room most days, listening to Skynd and coding terrible videogames.
+                        Or banging on the piano loudly and badly much to my dearest mother's chagrin.
+                    </p>
+                    <p class="text-sm text-gray-700 absolute bottom-6"> Email:</p>
+                </div>
+            </div>
+            <!-- Manny Card-->
+            <div class="about-card-img-left md:flex shadow-lg mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64 bg-purple-800 rounded">
+                <div class="card-info w-full md:w-2/3 px-4 py-4 bg-white rounded-lg relative">
+                    <div class="card-header flex justify-center">
+                        <h2 class="text-xl text-gray-800 font-bold">Manuel Perez</h2>
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">
+                        Lorem, ipsum dolor sit amet consectetur Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequ adipisicing elit. Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
+                    </p>
+                    <p class="text-sm text-gray-700 absolute bottom-6"> Email: Mperez5891@gmail.com</p>
+                </div>
+                <img class="card-image h-full w-full md:w-1/3 object-cover rounded-lg rounded-r-none pb-5/6" src="./images/Manny.jpg" alt="Manuel Perez">
+            </div>
+            <!-- Stanley Card-->
+            <div class="about-card-img-left md:flex shadow-lg mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64 bg-purple-800 rounded">
+                <img class="card-image h-full w-full md:w-1/3 object-cover rounded-lg rounded-r-none pb-5/6" src="./images/stan.png" alt="Stanley Shi">
+                <div class="card-info w-full md:w-2/3 px-4 py-4 bg-white rounded-lg relative">
+                    <div class="card-header flex justify-center">
+                        <h2 class="text-xl text-gray-800 font-bold">Stanley Shi</h2>
+                    </div>
+                    <p class="card-text text-sm text-gray-700 mt-4">
+                        Lorem, ipsum dolor sit amet consectetur Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequ adipisicing elit. Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
+                    </p>
+                    <div class="contact-info">
+                        <p class="text-sm text-gray-700 absolute bottom-6"> Email: </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Usman Card-->
+            <div class="about-card-img-left md:flex shadow-lg mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64 bg-purple-800 rounded">
+                <div class="card-info w-full md:w-2/3 px-4 py-4 bg-white rounded-lg relative">
+                    <div class="flex justify-center">
+                        <h2 class="text-xl text-gray-800 font-bold">Mohammad Usman Qazi</h2>
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">
+                        Lorem, ipsum dolor sit amet consectetur Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequ adipisicing elit. Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
+                    </p>
+                    <p class="text-sm text-gray-700 absolute bottom-6"> Email: </p>
+                </div>
+                <img class="card-image h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src="./images/usman.jpeg" alt="Mohammad Usman Qazi">
+            </div>
+            <!-- Yu Li Card-->
+            <div class="about-card-img-left md:flex shadow-lg mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64 bg-purple-800 rounded">
+                <img class="card-image h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src="./images/placeholder.jpg" alt="Stanley Shi">
+                <div class="card-info w-full md:w-2/3 px-4 py-4 bg-white rounded-lg relative">
+                    <div class="flex justify-center">
+                        <h2 class="text-xl text-gray-800 font-bold">Yu Li</h2>
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">
+                        Lorem, ipsum dolor sit amet consectetur Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequ adipisicing elit. Amet veritatis ipsam reiciendis numquam tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
+                    </p>
+                    <p class="text-sm text-gray-700 absolute bottom-6"> Email: </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="col-span-2 p-10 text-center">
+            <hr class="h-px bg-gray-800 border-none w-auto m-center">
+            <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+                <div>
+                    <a href="home_timeline.html" class="text-xl font-bold">Brand</a>
+                </div>
+                <div class="flex mt-4 md:m-0">
+                    <div class="-mx-4">
+                      <a href="about.html" class="px-4 text-sm">About</a>
+                      <a href="#" class="px-4 text-sm">Contact</a>
+                  	</div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
