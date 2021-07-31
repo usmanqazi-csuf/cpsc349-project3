@@ -65,7 +65,7 @@ mobileBtn.addEventListener('click', () => {
 
 // Generate div for each blog post
 
-if (window.location.pathname !== '/about.html') {
+if (window.location.pathname.substring() !== '/about.html') {
   if (timeline !== null) {
     for (let i = 0; i < timeline.length; i++) {
       let userId = mockroblog2.getUsername(timeline[i].user_id)
@@ -114,7 +114,7 @@ if (window.location.pathname !== '/about.html') {
 
 // New post dropdown menu
 
-if (window.location.pathname !== './following.html' && window.location.pathname !== '/about.html') {
+if (window.location.pathname.substring() !== '/following.html' && window.location.pathname.substring() !== '/about.html') {
   const newPostBtn = document.getElementById('new-post-button')
   const newPostArea = document.getElementById('new-post-area')
   
@@ -144,6 +144,6 @@ function publishPost () {
   }
 }
 
-if (window.location.pathname !== '/following.html' && window.location.pathname !== '/about.html') {
+if (window.location.pathname.substring() !== '/following.html' && window.location.pathname.substring() !== '/about.html') {
   document.getElementById('post-button').onclick = function () { publishPost() }
 }
