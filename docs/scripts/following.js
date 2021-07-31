@@ -20,12 +20,14 @@ for (let i = 0; i < timeline.length; i++) {
     if (!duplicate)
     {
         followArr.push(temp)
-        let timelinePost = document.createElement('div')
-        timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
-
-        timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
-        
-        document.getElementById("timeline").append(timelinePost)
+        if (window.location.pathname === '/followers.html') {
+            let timelinePost = document.createElement('div')
+            timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
+    
+            timelinePost.innerHTML += mockroblog2.getUsername(timeline[i].user_id)
+            
+            document.getElementById("timeline").append(timelinePost)
+        }
     }
 }
 window.sessionStorage.setItem("follow-arr", JSON.stringify(followArr))

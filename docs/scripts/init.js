@@ -65,46 +65,48 @@ mobileBtn.addEventListener('click', () => {
 
 // Generate div for each blog post
 
-if (timeline !== null) {
-  for (let i = 0; i < timeline.length; i++) {
-    let userId = mockroblog2.getUsername(timeline[i].user_id)
-    let followOrUnfollowButton = ''
-    if (userId !== window.sessionStorage.getItem("username"))
-    {
-      followOrUnfollowButton = "<button class='" + userId + "-follow-or-unfollow-button bg-indigo-500 rounded-lg p-1'></button>"
-    }
-    const timelinePost = document.createElement('div')
-    timelinePost.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
-    timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
-    + "<p>" + userId + "</p>" + followOrUnfollowButton + "</div><hr>"
-    timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
-    timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
-  
-    document.getElementById('timeline').append(timelinePost)
-
-    // Follow/Unfollow
-    let followArr = window.sessionStorage.getItem("follow-arr")
-    followArr = JSON.parse(followArr)
-    let found = false
-    for(let j = 0; j < followArr.length; j++)
-    {
-      if(userId === followArr[j]) // if found, button is unfollow
+if (window.location.pathname !== '/about.html') {
+  if (timeline !== null) {
+    for (let i = 0; i < timeline.length; i++) {
+      let userId = mockroblog2.getUsername(timeline[i].user_id)
+      let followOrUnfollowButton = ''
+      if (userId !== window.sessionStorage.getItem("username"))
       {
-          console.log("followArr[j]ID=="+followArr[j]+" userId ==" + userId)
-          found = true
-          let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
-          for(let k = 0; k < buttonArr.length; k++)
-          {
-              buttonArr[k].innerHTML = "UNFOLLOW"
-          }
+        followOrUnfollowButton = "<button class='" + userId + "-follow-or-unfollow-button "
+        + "bg-indigo-500 rounded-lg p-1 hover:bg-purple-700 transition duration-300'></button>"
       }
-    }
-    if(!found)  // if not found, button is follow
-    {
-      let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
-      for(let l = 0; l < buttonArr.length; l++)
+      const timelinePost = document.createElement('div')
+      timelinePost.className = 'p-5 m-5 rounded-lg bg-black'
+      timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
+      + "<p>" + userId + "</p>" + followOrUnfollowButton + "</div><hr>"
+      timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
+      timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
+    
+      document.getElementById('timeline').append(timelinePost)
+  
+      // Follow/Unfollow
+      let followArr = window.sessionStorage.getItem("follow-arr")
+      followArr = JSON.parse(followArr)
+      let found = false
+      for (let j = 0; j < followArr.length; j++)
       {
-        buttonArr[l].innerHTML = "FOLLOW!"
+        if (userId === followArr[j]) // if found, button is unfollow
+        {
+            found = true
+            let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
+            for(let k = 0; k < buttonArr.length; k++)
+            {
+                buttonArr[k].innerHTML = "Unfollow"
+            }
+        }
+      }
+      if (!found)  // if not found, button is follow
+      {
+        let buttonArr = document.getElementsByClassName(userId+"-follow-or-unfollow-button")
+        for(let l = 0; l < buttonArr.length; l++)
+        {
+          buttonArr[l].innerHTML = "Follow"
+        }
       }
     }
   }
@@ -112,12 +114,14 @@ if (timeline !== null) {
 
 // New post dropdown menu
 
-const newPostBtn = document.getElementById('new-post-button')
-const newPostArea = document.getElementById('new-post-area')
-
-newPostBtn.addEventListener('click', () => {
-  newPostArea.classList.toggle('hidden')
-})
+if (window.location.pathname !== '/followers.html' && window.location.pathname !== '/about.html') {
+  const newPostBtn = document.getElementById('new-post-button')
+  const newPostArea = document.getElementById('new-post-area')
+  
+  newPostBtn.addEventListener('click', () => {
+    newPostArea.classList.toggle('hidden')
+  })
+}
 
 // Post button functionality
 
@@ -140,4 +144,6 @@ function publishPost () {
   }
 }
 
-document.getElementById('post-button').onclick = function () { publishPost() }
+if (window.location.pathname !== '/followers.html' && window.location.pathname !== '/about.html') {
+  document.getElementById('post-button').onclick = function () { publishPost() }
+}
