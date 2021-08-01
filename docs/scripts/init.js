@@ -22,7 +22,14 @@ const loginStatus = document.getElementsByClassName('login-status')
 
 for (let i = 0; i < loginStatus.length; i++)
 {
-  loginStatus[i].innerHTML = 'Logged in as @' + username
+  if (username !== null) {
+    loginStatus[i].innerHTML = 'Logged in as @' + username
+    loginStatus[i].classList.add('cursor-default')
+  } else {
+    loginStatus[i].innerHTML = 'Login or Register'
+    loginStatus[i].classList.add('hover:bg-purple-700')
+    loginStatus[i].setAttribute('href', './')
+  }
 }
 
 // Logout when hitting logout button
@@ -37,9 +44,11 @@ document.getElementById('mobile-logout-button').onclick = function () { logout()
 
 // Redirect to login page if not logged in
 
-if (!window.sessionStorage.getItem('username')) {
-  window.location.href = './'
-  window.sessionStorage.setItem('login-error', 'Error: You must log in first!')
+if (!window.location.pathname.includes('/about.html')) {
+  if (!window.sessionStorage.getItem('username')) {
+    window.location.href = './'
+    window.sessionStorage.setItem('login-error', 'Error: You must log in first!')
+  }
 }
 
 

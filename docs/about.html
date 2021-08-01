@@ -17,7 +17,7 @@
         <nav class="hidden lg:col-start-1 lg:row-start-1 lg:grid lg:grid-cols-4 lg:gap-1 lg:row-span-3">
             <div class="col-start-2">
                 <div class="fixed h-full w-44 flex flex-col text-center justify-center bg-opacity-50 bg-purple-800">
-                    <span class="login-status p-4">Logged in as @{username}</span> 
+                    <a class="login-status p-5" href="">Logged in as @{username}</a>
                     <hr>
                     <a class="hover:bg-purple-700 p-5" id="home_tl" href="home_timeline.html">Home Timeline</a> 
                     <a class="hover:bg-purple-700 p-5" id="public_tl" href="public_timeline.html">Public Timeline</a>
@@ -38,12 +38,12 @@
                 </svg>
             </button>
             <div id="mobile-menu" class="hidden bg-indigo-800">
-                <span class="login-status block p-5">Logged in as {username}</span> 
+                <a class="login-status block p-5" href="">Logged in as {username}</a> 
                 <a class="block hover:bg-purple-700 p-5 bg-purple-800 active" id="home_tl" href="home_timeline.html">Home Timeline</a> 
                 <a class="block hover:bg-purple-700 p-5" id="public_tl" href="public_timeline.html">Public Timeline</a>
                 <a class="block hover:bg-purple-700 p-5" id="user_tl" href="user_timeline.html">User Timeline</a> 
-                <a class="block hover:bg-purple-700 p-5" id="following_tl" href="following.html">Following</a>  
-                <button id="mobile-logout-button" class="block w-full hover:bg-purple-700 p-5">Logout</button>
+                <a class="block hover:bg-purple-700 p-5" id="following_tl" href="following.html">Following</a>
+                <button id="mobile-logout-button" class="hover:bg-purple-700 p-5">Logout</button>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                     </p>
                     <div>
                         <a class="text-blue-900 font-bold hover:text-purple-600 transition duration-300" 
-                        href="mailto:usmanqazi8@gmail.com">Email Christopher</a>
+                        href="mailto:cweichlein@csu.fullerton.edu">Email Christopher</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     </p>
                     <div>
                         <a class="text-blue-900 font-bold hover:text-purple-600 transition duration-300" 
-                        href="mailto:usmanqazi8@gmail.com">Email Manuel</a>
+                        href="mailto:mperez5891@csu.fullerton.edu">Email Manuel</a>
                     </div>
                 </div>
             </div>
@@ -139,16 +139,14 @@
 
         <!-- Footer -->
         <footer class="col-start-2 col-end-4 p-10 text-center">
-            <hr class="h-px bg-gray-800 border-none w-auto m-center">
-            <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+            <hr class="h-px bg-gray-600 border-none w-auto">
+            <h2 class="m-5">Copyright @ 2021 CSUF Team 7</h2>
+            <div class="flex flex-col lg:space-x-16 my-5 justify-center items-center text-center lg:justify-between lg:flex-row">
                 <div>
-                    <a href="home_timeline.html" class="text-xl font-bold">Brand</a>
+                    <a href="home_timeline.html" class="text-xl font-bold">Stoopneggle</a>
                 </div>
-                <div class="flex mt-4 md:m-0">
-                    <div class="-mx-4">
-                      <a href="about.html" class="px-4 text-sm">About</a>
-                      <a href="#" class="px-4 text-sm">Contact</a>
-                  	</div>
+                <div class="flex mt-4 lg:m-0">
+                    <a href="about.html" class="px-4 text-sm">About</a>
                 </div>
             </div>
         </footer>
