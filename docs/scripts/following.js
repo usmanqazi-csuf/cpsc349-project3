@@ -30,6 +30,9 @@ for (let i = 0; i < timeline.length; i++) {
             + "hover:bg-purple-700 transition duration-300'>Unfollow</button></div>"
     
             document.getElementById("timeline").append(timelinePost)
+            /*document.getElementById(temp + "-follow-button").addEventListener('click', () => {
+            removeFollower(window.sessionStorage.getItem("uid"), timeline[i].user_id)
+          })*/
         }
     }
 }
