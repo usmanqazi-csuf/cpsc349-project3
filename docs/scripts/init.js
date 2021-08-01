@@ -106,6 +106,10 @@ if (!window.location.pathname.includes('/about.html')) {
             for(let k = 0; k < buttonArr.length; k++)
             {
                 buttonArr[k].innerHTML = "Unfollow"
+                buttonArr[k].addEventListener('click', () => {
+                  mockroblog.removeFollower(window.sessionStorage.getItem("uid"), timeline[i].user_id)
+                  buttonArr[k].innerHTML = "Follow"
+                })
             }
         }
       }
@@ -115,6 +119,10 @@ if (!window.location.pathname.includes('/about.html')) {
         for(let l = 0; l < buttonArr.length; l++)
         {
           buttonArr[l].innerHTML = "Follow"
+          buttonArr[l].addEventListener('click', () => {
+            mockroblog.addFollower(window.sessionStorage.getItem("uid"), timeline[i].user_id)
+            buttonArr[l].innerHTML = "Unfollow"
+          })
         }
       }
     }
