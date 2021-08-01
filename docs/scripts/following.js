@@ -30,6 +30,13 @@ for (let i = 0; i < timeline.length; i++) {
             + "hover:bg-purple-700 transition duration-300'>Unfollow</button></div>"
     
             document.getElementById("timeline").append(timelinePost)
+            let buttonArr = document.getElementsByClassName(temp + "-follow-button") 
+            for (let k = 0; k < buttonArr.length; k++) {
+                buttonArr[k].addEventListener('click', () => {
+                    mockroblog.removeFollower(window.sessionStorage.getItem("uid"), timeline[i].user_id)
+                    buttonArr[k].innerHTML = "Follow"
+                })
+            }
         }
     }
 }
