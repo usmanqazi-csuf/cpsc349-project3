@@ -140,13 +140,12 @@ function publishPost () {
     const postData = mockroblog.postMessage(window.sessionStorage.getItem('uid'), newPostText)
     document.getElementById('new-post-text').value = ''
 
-    // Generate and display new div
     const newPostDiv = document.createElement('div')
-    newPostDiv.className = 'p-5 m-5 rounded-lg bg-black hover:bg-purple-700'
-
-    newPostDiv.innerHTML += window.sessionStorage.getItem('username')
-    newPostDiv.innerHTML += "<span class = 'float-right'>" + postData.timestamp + '</span>' + '<br>' + '<hr>'
-    newPostDiv.innerHTML += postData.text
+    newPostDiv.className = 'p-5 m-5 rounded-lg bg-black'
+    newPostDiv.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
+    + "<p>" + window.sessionStorage.getItem('username') + "</p></div><hr>"
+    newPostDiv.innerHTML += "<div class='post-text m-2'>" + postData.text + "</div>"
+    newPostDiv.innerHTML += "<hr><p class='mt-2'>" + postData.timestamp + "</p>"
 
     document.getElementById('new-post-area').after(newPostDiv)
     newPostArea.classList.toggle("hidden")
