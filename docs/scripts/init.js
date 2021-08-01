@@ -88,7 +88,7 @@ if (!window.location.pathname.includes('/about.html')) {
       timelinePost.className = 'p-5 m-5 rounded-lg bg-black'
       timelinePost.innerHTML += "<div class='flex flex-row text-center items-center justify-between mb-2'>"
       + "<p>" + userId + "</p>" + followOrUnfollowButton + "</div><hr>"
-      timelinePost.innerHTML += "<div class='post-text m-2'>" + timeline[i].text + "</div>"
+      timelinePost.innerHTML += "<div class='post-text m-2 break-words'>" + timeline[i].text + "</div>"
       timelinePost.innerHTML += "<hr><p class='mt-2'>" + timeline[i].timestamp + "</p>"
     
       document.getElementById('timeline').append(timelinePost)
